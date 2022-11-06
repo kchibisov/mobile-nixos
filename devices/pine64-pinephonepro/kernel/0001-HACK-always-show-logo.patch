@@ -15,12 +15,12 @@ that. I should probably trace out from where it comes from later on.
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/drivers/video/fbdev/core/fbcon.c b/drivers/video/fbdev/core/fbcon.c
-index cef437817b0dc..0d21da0fd4e33 100644
+index 098b62f7b701..135732edcc75 100644
 --- a/drivers/video/fbdev/core/fbcon.c
 +++ b/drivers/video/fbdev/core/fbcon.c
-@@ -1044,8 +1044,7 @@ static void fbcon_init(struct vc_data *vc, int init)
- 	info = registered_fb[con2fb_map[vc->vc_num]];
- 	cap = info->flags;
+@@ -1006,8 +1006,7 @@ static void fbcon_init(struct vc_data *vc, int init)
+ 
+ 	info = fbcon_info_from_console(vc->vc_num);
  
 -	if (logo_shown < 0 && console_loglevel <= CONSOLE_LOGLEVEL_QUIET)
 -		logo_shown = FBCON_LOGO_DONTSHOW;
@@ -28,6 +28,3 @@ index cef437817b0dc..0d21da0fd4e33 100644
  
  	if (vc != svc || logo_shown == FBCON_LOGO_DONTSHOW ||
  	    (info->fix.type == FB_TYPE_TEXT))
--- 
-2.29.2
-
